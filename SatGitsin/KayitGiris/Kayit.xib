@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Kayit" customModule="SatGitsin" customModuleProvider="target">
+            <connections>
+                <outlet property="lblText" destination="uLo-O0-SjY" id="IQU-ce-tBM"/>
+                <outlet property="txtIsimKayit" destination="CXO-FS-10V" id="1VH-tA-CS0"/>
+                <outlet property="txtMailKayit" destination="H30-cD-JOg" id="D2o-nU-nqR"/>
+                <outlet property="txtPasswordKayit" destination="c8B-Kj-yeY" id="dnj-it-3xj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Posta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H30-cD-JOg" customClass="PaddingTextField" customModule="SatGitsin" customModuleProvider="target">
+                    <rect key="frame" x="16" y="62" width="343" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="S9I-hO-3XE"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8B-Kj-yeY">
+                    <rect key="frame" x="16" y="128" width="343" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="cl2-X0-Y4w"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="İsim" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXO-FS-10V">
+                    <rect key="frame" x="16" y="201" width="343" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="BxP-cJ-g0r"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWi-dh-gQg">
+                    <rect key="frame" x="16" y="281" width="343" height="45"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="6LC-qk-ynl"/>
+                    </constraints>
+                    <state key="normal" title="Kayit Ol">
+                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="s:" destination="-1" eventType="touchUpInside" id="1nK-MC-RFJ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLo-O0-SjY">
+                    <rect key="frame" x="195" y="373" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CXO-FS-10V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1yV-MK-TJv"/>
+                <constraint firstItem="H30-cD-JOg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7T6-pw-Iu7"/>
+                <constraint firstItem="CXO-FS-10V" firstAttribute="top" secondItem="c8B-Kj-yeY" secondAttribute="bottom" constant="28" id="7ur-Fy-28A"/>
+                <constraint firstItem="H30-cD-JOg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="42" id="ASW-bk-fqd"/>
+                <constraint firstItem="c8B-Kj-yeY" firstAttribute="top" secondItem="H30-cD-JOg" secondAttribute="bottom" constant="21" id="Dqr-gy-5gM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c8B-Kj-yeY" secondAttribute="trailing" constant="16" id="IOq-3H-oO3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BWi-dh-gQg" secondAttribute="trailing" constant="16" id="Oh8-hV-04q"/>
+                <constraint firstItem="BWi-dh-gQg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qu4-D0-bty"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CXO-FS-10V" secondAttribute="trailing" constant="16" id="W1v-0X-b6U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H30-cD-JOg" secondAttribute="trailing" constant="16" id="jev-cr-rbn"/>
+                <constraint firstItem="c8B-Kj-yeY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kKG-Kt-mge"/>
+                <constraint firstItem="BWi-dh-gQg" firstAttribute="top" secondItem="CXO-FS-10V" secondAttribute="bottom" constant="35" id="p5i-Iq-cHF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-12" y="63"/>
+        </view>
+    </objects>
+</document>
