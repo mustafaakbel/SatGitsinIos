@@ -25,7 +25,7 @@ class GirisController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    	
     @IBAction func GirisButton(_ sender: Any) {
         
         /*
