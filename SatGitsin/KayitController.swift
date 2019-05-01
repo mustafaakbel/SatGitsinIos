@@ -17,7 +17,6 @@ class KayitController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let mailFoto = UIImage(named:"mail")
         textFotoKoyma(txtField: txtMailKayit, img: mailFoto!)
         let passwordFoto = UIImage(named:"password")
