@@ -38,8 +38,10 @@ class KayitController: UIViewController {
                 print("oldu")
                 Auth.auth().signIn(withEmail:self.txtMailKayit.text!, password: self.txtPasswordKayit.text!, completion: { (user, error) in
                     if(error == nil && kullanici != nil){
-                        let anasayfa = self.storyboard?.instantiateViewController(withIdentifier: "Anasayfa") as! Anasayfa
-                        self.present(anasayfa,animated: true,completion: nil)//Normal Geçiş
+                        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDelegate.window?.rootViewController = tabbar
+                        //self.present(anasayfa,animated: true,completion: nil)//Normal Geçiş
                     }else{
                         print("uye girişi hata")
                     }

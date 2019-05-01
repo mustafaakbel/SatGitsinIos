@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+
 class GirisController: UIViewController {
 
     @IBOutlet weak var txtMailGiris: UITextField!
@@ -18,16 +19,19 @@ class GirisController: UIViewController {
         textFotoKoyma(txtField: txtMailGiris, img: mailFoto!)
         let passwordFoto = UIImage(named:"password")
         textFotoKoyma(txtField: txtPasswordGiris, img: passwordFoto!)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    	
+    
     @IBAction func GirisButton(_ sender: Any) {
         
+        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = tabbar
+    
+        //	self.present(anasayfa2,animated: true,completion: nil)//Normal Geçiş
         /*
         Auth.auth().signIn(withEmail: txtMailGiris.text!, password:  txtPasswordGiris.text!) { (user, error) in
             if(user != nil && error == nil){

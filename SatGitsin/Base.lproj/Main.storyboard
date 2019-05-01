@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="KayitGiris" id="BYZ-38-t0r" customClass="ViewController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,31 +71,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828" y="-210.04497751124438"/>
-        </scene>
-        <!--Anasayfa-->
-        <scene sceneID="k8L-Ju-25n">
-            <objects>
-                <viewController storyboardIdentifier="Anasayfa" id="xmD-1n-V9R" customClass="Anasayfa" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jZA-dS-fCb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avv-hr-GjF">
-                                <rect key="frame" x="39" y="300" width="296" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="CikisYapButton:" destination="xmD-1n-V9R" eventType="touchUpInside" id="kaD-Gq-K6y"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="oyS-xk-c10"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qSN-sg-0jS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3663" y="-116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UVN-er-qvs">
@@ -169,6 +144,7 @@
                             <constraint firstItem="Cvo-m2-FzD" firstAttribute="leading" secondItem="Ebq-e8-iFU" secondAttribute="leadingMargin" id="kXQ-6f-ED7"/>
                             <constraint firstItem="m77-DR-SKE" firstAttribute="top" secondItem="KeL-Hu-1wx" secondAttribute="bottom" constant="25" id="n7V-as-bCn"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="wEb-9t-N5D"/>
                     </view>
                     <connections>
                         <outlet property="txtMailGiris" destination="Cvo-m2-FzD" id="U7V-0O-lUJ"/>
@@ -179,55 +155,134 @@
             </objects>
             <point key="canvasLocation" x="1246" y="456"/>
         </scene>
-        <!--Profil Controller-->
+        <!--Profil-->
+        <scene sceneID="JiD-XK-p5L">
+            <objects>
+                <viewController id="gQf-KN-GHs" customClass="ProfilController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tyz-FT-20O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-wh-K7d">
+                                <rect key="frame" x="79" y="155" width="210" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-e6-ibv">
+                                <rect key="frame" x="150" y="290" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Çıkış"/>
+                                <connections>
+                                    <action selector="CikisYap:" destination="gQf-KN-GHs" eventType="touchUpInside" id="zZR-XZ-IEy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EbD-2L-Ygj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profil" id="mK0-j5-ofF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4E-SB-imO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892" y="717.39130434782612"/>
+        </scene>
+        <!--Mesaj-->
+        <scene sceneID="BTQ-R8-BeR">
+            <objects>
+                <viewController id="qOb-eP-AhV" customClass="MesajController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ha-kE-wR6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mesajlaşma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epX-BS-lP6">
+                                <rect key="frame" x="123" y="150" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.1043915102" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4Fj-Me-H4r"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mesaj" image="chat" id="rDy-6n-rKu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2GX-l6-Fvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892" y="89.505247376311857"/>
+        </scene>
+        <!--İlan Ver-->
         <scene sceneID="J2h-DQ-NRi">
             <objects>
-                <viewController storyboardIdentifier="Profil" id="j5w-xp-y79" customClass="ProfilController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profil" id="j5w-xp-y79" customClass="IlanVerController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsU-Ur-fG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="İlan Ver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK1-fp-rXa">
+                                <rect key="frame" x="99" y="70" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.70802513739999995" blue="0.1590897554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="sjg-Jx-WGn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3w1-wu-Kzg"/>
+                    <tabBarItem key="tabBarItem" title="İlan Ver" id="3w1-wu-Kzg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2f-p6-1xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2918" y="279"/>
+            <point key="canvasLocation" x="2892" y="-491.60419790104953"/>
         </scene>
-        <!--View Controller-->
+        <!--Anasayfa-->
         <scene sceneID="NNr-NA-TYI">
             <objects>
-                <viewController id="a4N-Sj-4zL" sceneMemberID="viewController">
+                <viewController id="a4N-Sj-4zL" customClass="AnasayfaController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lxu-Vh-1cm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anasayfa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-6F-lzl">
+                                <rect key="frame" x="86" y="120" width="216" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.2183558551" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wCt-bw-qci"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="GOD-aA-saW"/>
+                    <tabBarItem key="tabBarItem" title="Anasayfa" image="home" id="GOD-aA-saW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOH-aV-iJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2919" y="-402"/>
+            <point key="canvasLocation" x="2892" y="-1069.1154422788607"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zQd-nX-XCw">
             <objects>
-                <tabBarController id="GKc-eo-ZPG" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="GKc-eo-ZPG" customClass="TabBarController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gBf-8U-EL9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="a4N-Sj-4zL" kind="relationship" relationship="viewControllers" id="eYX-JM-FVI"/>
                         <segue destination="j5w-xp-y79" kind="relationship" relationship="viewControllers" id="2ws-fW-OhX"/>
+                        <segue destination="qOb-eP-AhV" kind="relationship" relationship="viewControllers" id="pyE-CD-jlI"/>
+                        <segue destination="gQf-KN-GHs" kind="relationship" relationship="viewControllers" id="6zv-Xc-Sgu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNj-GJ-xqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="-179"/>
+            <point key="canvasLocation" x="2025" y="-170"/>
         </scene>
         <!--Kayit Controller-->
         <scene sceneID="hkI-a1-m0e">
@@ -294,6 +349,7 @@
                             <constraint firstItem="76Y-si-ImO" firstAttribute="leading" secondItem="EoE-a7-0QS" secondAttribute="leadingMargin" id="wr5-Ki-CzS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gU5-Kw-AQ3" secondAttribute="trailing" id="yKn-eD-LXG"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cvv-2k-S7Y"/>
                     </view>
                     <connections>
                         <outlet property="txtIsimKayit" destination="76Y-si-ImO" id="lG9-6i-Hgb"/>
@@ -306,5 +362,9 @@
             <point key="canvasLocation" x="449" y="456"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat" width="24" height="24"/>
+        <image name="home" width="24" height="24"/>
+    </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.16343487933161782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

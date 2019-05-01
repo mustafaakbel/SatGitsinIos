@@ -13,12 +13,15 @@
 		FA1378D9226F54B4003C9709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1378D8226F54B4003C9709 /* GoogleService-Info.plist */; };
 		FA4A3E712278A91B009A15A1 /* KayitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E702278A91B009A15A1 /* KayitController.swift */; };
 		FA4A3E732278ACBE009A15A1 /* GirisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E722278ACBE009A15A1 /* GirisController.swift */; };
-		FA4A3E752278B794009A15A1 /* Anasayfa.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E742278B794009A15A1 /* Anasayfa.swift */; };
 		FA4A3E772278FBFD009A15A1 /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E762278FBFD009A15A1 /* ProfilController.swift */; };
 		FA61382A2243006E00B32A0D /* Kayit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6138282243006E00B32A0D /* Kayit.swift */; };
 		FA61382B2243006E00B32A0D /* Kayit.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6138292243006E00B32A0D /* Kayit.xib */; };
 		FA613830224300A500B32A0D /* Giris.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61382E224300A500B32A0D /* Giris.swift */; };
 		FA613831224300A500B32A0D /* Giris.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA61382F224300A500B32A0D /* Giris.xib */; };
+		FA7CA34D2279C8B3003F5785 /* MesajController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CA34C2279C8B3003F5785 /* MesajController.swift */; };
+		FA7CA34F2279C8C6003F5785 /* IlanVerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CA34E2279C8C6003F5785 /* IlanVerController.swift */; };
+		FA7CA3512279C8DE003F5785 /* AnasayfaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CA3502279C8DE003F5785 /* AnasayfaController.swift */; };
+		FA7CA3532279D70A003F5785 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CA3522279D70A003F5785 /* TabBarController.swift */; };
 		FA89D762226E6D6B00CB5628 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA89D761226E6D6B00CB5628 /* Images.xcassets */; };
 		FAB9C929224053680078EBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C928224053680078EBAB /* AppDelegate.swift */; };
 		FAB9C92B224053680078EBAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9C92A224053680078EBAB /* ViewController.swift */; };
@@ -59,12 +62,15 @@
 		FA1378D8226F54B4003C9709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA4A3E702278A91B009A15A1 /* KayitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KayitController.swift; sourceTree = "<group>"; };
 		FA4A3E722278ACBE009A15A1 /* GirisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirisController.swift; sourceTree = "<group>"; };
-		FA4A3E742278B794009A15A1 /* Anasayfa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anasayfa.swift; sourceTree = "<group>"; };
 		FA4A3E762278FBFD009A15A1 /* ProfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilController.swift; sourceTree = "<group>"; };
 		FA6138282243006E00B32A0D /* Kayit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kayit.swift; sourceTree = "<group>"; };
 		FA6138292243006E00B32A0D /* Kayit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Kayit.xib; sourceTree = "<group>"; };
 		FA61382E224300A500B32A0D /* Giris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giris.swift; sourceTree = "<group>"; };
 		FA61382F224300A500B32A0D /* Giris.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Giris.xib; sourceTree = "<group>"; };
+		FA7CA34C2279C8B3003F5785 /* MesajController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesajController.swift; sourceTree = "<group>"; };
+		FA7CA34E2279C8C6003F5785 /* IlanVerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IlanVerController.swift; sourceTree = "<group>"; };
+		FA7CA3502279C8DE003F5785 /* AnasayfaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaController.swift; sourceTree = "<group>"; };
+		FA7CA3522279D70A003F5785 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FA89D761226E6D6B00CB5628 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAB9C925224053680078EBAB /* SatGitsin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatGitsin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB9C928224053680078EBAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +177,9 @@
 				FA4A3E702278A91B009A15A1 /* KayitController.swift */,
 				FA4A3E722278ACBE009A15A1 /* GirisController.swift */,
 				FA4A3E762278FBFD009A15A1 /* ProfilController.swift */,
-				FA4A3E742278B794009A15A1 /* Anasayfa.swift */,
+				FA7CA34C2279C8B3003F5785 /* MesajController.swift */,
+				FA7CA34E2279C8C6003F5785 /* IlanVerController.swift */,
+				FA7CA3502279C8DE003F5785 /* AnasayfaController.swift */,
 				FA6138252243000D00B32A0D /* KayitGiris */,
 				FAB9C928224053680078EBAB /* AppDelegate.swift */,
 				FAB9C92A224053680078EBAB /* ViewController.swift */,
@@ -181,6 +189,7 @@
 				FAB9C934224053680078EBAB /* Info.plist */,
 				FA89D761226E6D6B00CB5628 /* Images.xcassets */,
 				FA1378D8226F54B4003C9709 /* GoogleService-Info.plist */,
+				FA7CA3522279D70A003F5785 /* TabBarController.swift */,
 			);
 			path = SatGitsin;
 			sourceTree = "<group>";
@@ -428,12 +437,15 @@
 			files = (
 				FA4A3E732278ACBE009A15A1 /* GirisController.swift in Sources */,
 				FA4A3E772278FBFD009A15A1 /* ProfilController.swift in Sources */,
+				FA7CA3532279D70A003F5785 /* TabBarController.swift in Sources */,
+				FA7CA34F2279C8C6003F5785 /* IlanVerController.swift in Sources */,
 				FA613830224300A500B32A0D /* Giris.swift in Sources */,
+				FA7CA34D2279C8B3003F5785 /* MesajController.swift in Sources */,
 				FA4A3E712278A91B009A15A1 /* KayitController.swift in Sources */,
 				FAB9C92B224053680078EBAB /* ViewController.swift in Sources */,
 				FAB9C929224053680078EBAB /* AppDelegate.swift in Sources */,
-				FA4A3E752278B794009A15A1 /* Anasayfa.swift in Sources */,
 				FA61382A2243006E00B32A0D /* Kayit.swift in Sources */,
+				FA7CA3512279C8DE003F5785 /* AnasayfaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

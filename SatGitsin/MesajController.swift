@@ -1,14 +1,14 @@
 //
-//  ProfilController.swift
+//  MesajController.swift
 //  SatGitsin
 //
-//  Created by Mustafa AKBEL on 30.04.2019.
+//  Created by Mustafa AKBEL on 1.05.2019.
 //  Copyright © 2019 Mustafa AKBEL. All rights reserved.
 //
 
 import UIKit
 
-class ProfilController: UIViewController {
+class MesajController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +21,7 @@ class ProfilController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func CikisYap(_ sender: Any) {
-        //try! Auth.auth().signOut()
-        let anasayfa = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = anasayfa
-    }
-    
+
     /*
     // MARK: - Navigation
 
