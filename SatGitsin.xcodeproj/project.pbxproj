@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		24E42559B65C1D900C1FF28C /* Pods_SatGitsinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E89E3F0DEEE8F08E525325 /* Pods_SatGitsinTests.framework */; };
 		5F8AF43DC3B659FE7B26E972 /* Pods_SatGitsin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE9AFB770ED3626FFDAAD64 /* Pods_SatGitsin.framework */; };
+		692DB1D0227A55100027750C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1378D8226F54B4003C9709 /* GoogleService-Info.plist */; };
 		84F6ACF799351B96FEBD87AF /* Pods_SatGitsinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C6C7B58E8C9DE7086EAFBB /* Pods_SatGitsinUITests.framework */; };
-		FA1378D9226F54B4003C9709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1378D8226F54B4003C9709 /* GoogleService-Info.plist */; };
 		FA4A3E712278A91B009A15A1 /* KayitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E702278A91B009A15A1 /* KayitController.swift */; };
 		FA4A3E732278ACBE009A15A1 /* GirisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E722278ACBE009A15A1 /* GirisController.swift */; };
 		FA4A3E772278FBFD009A15A1 /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A3E762278FBFD009A15A1 /* ProfilController.swift */; };
@@ -54,6 +54,7 @@
 		53A87EDC9EC7620DC784370C /* Pods-SatGitsinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatGitsinTests.debug.xcconfig"; path = "Target Support Files/Pods-SatGitsinTests/Pods-SatGitsinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C6C7B58E8C9DE7086EAFBB /* Pods_SatGitsinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatGitsinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E89E3F0DEEE8F08E525325 /* Pods_SatGitsinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatGitsinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69150B2B2279F7900047C6AE /* Pods_SatGitsinUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_SatGitsinUITests.framework; path = "../../Library/Developer/Xcode/DerivedData/SatGitsin-cbdjmrooxidvksbvtdiwngilbzsi/Build/Products/Debug-iphoneos/Pods_SatGitsinUITests.framework"; sourceTree = "<group>"; };
 		793308E756701847200E93B8 /* Pods-SatGitsin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatGitsin.release.xcconfig"; path = "Target Support Files/Pods-SatGitsin/Pods-SatGitsin.release.xcconfig"; sourceTree = "<group>"; };
 		8366C567C7B5FB5A6BDD6B71 /* Pods-SatGitsinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatGitsinUITests.debug.xcconfig"; path = "Target Support Files/Pods-SatGitsinUITests/Pods-SatGitsinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		865708E70078E4CCC548C635 /* Pods-SatGitsinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatGitsinUITests.release.xcconfig"; path = "Target Support Files/Pods-SatGitsinUITests/Pods-SatGitsinUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		EEAEE16A356D8F7AFC08589A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69150B2B2279F7900047C6AE /* Pods_SatGitsinUITests.framework */,
 				EEE9AFB770ED3626FFDAAD64 /* Pods_SatGitsin.framework */,
 				65E89E3F0DEEE8F08E525325 /* Pods_SatGitsinTests.framework */,
 				58C6C7B58E8C9DE7086EAFBB /* Pods_SatGitsinUITests.framework */,
@@ -323,13 +325,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692DB1D0227A55100027750C /* GoogleService-Info.plist in Resources */,
 				FA61382B2243006E00B32A0D /* Kayit.xib in Resources */,
 				FA613831224300A500B32A0D /* Giris.xib in Resources */,
 				FAB9C933224053680078EBAB /* LaunchScreen.storyboard in Resources */,
 				FA89D762226E6D6B00CB5628 /* Images.xcassets in Resources */,
 				FAB9C930224053680078EBAB /* Assets.xcassets in Resources */,
 				FAB9C92E224053680078EBAB /* Main.storyboard in Resources */,
-				FA1378D9226F54B4003C9709 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
