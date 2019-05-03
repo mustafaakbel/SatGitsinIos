@@ -25,7 +25,6 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage
         {
-            ilanVerUrunImage.isHidden = true
             ilanVerUrunImage.image=image
         }
         else
@@ -58,8 +57,9 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ilanVerUrunImage.isHidden = false
-
+        textOval(txtField: IlanVerUrunBaslik)
+        textOval(txtField: IlanVerUrunOzellik)
+        textOval(txtField: IlanVerUrunFiyat)
         // Do any additional setup after loading the view.
     }
 
@@ -67,7 +67,11 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func textOval(txtField: UITextField){
+        txtField.layer.cornerRadius = 20
+        txtField.layer.borderWidth = 1.0
+        txtField.layer.borderColor = UIColor.darkGray.cgColor
+    }
 
 
 }
