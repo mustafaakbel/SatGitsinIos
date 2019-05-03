@@ -25,7 +25,6 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image=info[UIImagePickerControllerOriginalImage] as? UIImage
         {
-            ilanVerUrunImage.isHidden = true
             ilanVerUrunImage.image=image
         }
         else
@@ -36,7 +35,6 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     }
    
     // ilan kategori seçme
-    @IBOutlet weak var IlanVerKategoriTxt: UILabel!
     @IBOutlet weak var IlanVerPickerView: UIPickerView!
     let foods = ["apples", "Banana", "Cora", "dfadgdsg", "fdasfs","fsdfgd", "fdgdh", "afdfdsgd"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -50,16 +48,17 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     }
    
  // Ürün başlık seçme
-    @IBOutlet weak var IlanVerUrunBaslik: UITextField!
     
+    @IBOutlet weak var IlanVerUrunBaslik: UITextField!
     @IBOutlet weak var IlanVerUrunOzellik: UITextField!
     @IBOutlet weak var IlanVerUrunFiyat: UITextField!
     @IBAction func IlanverButon(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        ilanVerUrunImage.isHidden = false
-
+        self.textOval(txtField: IlanVerUrunBaslik)
+        textOval(txtField: IlanVerUrunOzellik)
+        textOval(txtField: IlanVerUrunFiyat)
         // Do any additional setup after loading the view.
     }
 
@@ -67,7 +66,11 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func textOval(txtField: UITextField){
+        txtField.layer.cornerRadius = 20
+        txtField.layer.borderWidth = 1.0
+        txtField.layer.borderColor = UIColor.darkGray.cgColor
+    }
 
 
 }
