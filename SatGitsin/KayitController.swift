@@ -9,14 +9,17 @@
 import UIKit
 import Firebase
 class KayitController: UIViewController {
-
+    
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var txtMailKayit: UITextField!
     @IBOutlet weak var txtPasswordKayit: UITextField!
     @IBOutlet weak var txtIsimKayit: UITextField!
-    
-    
+    var kullaniciRef : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        kullaniciRef = Database.database().reference().child("Kullanicilar")
+        
         let mailFoto = UIImage(named:"mail")
         textFotoKoyma(txtField: txtMailKayit, img: mailFoto!)
         let passwordFoto = UIImage(named:"password")
@@ -30,28 +33,42 @@ class KayitController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
     @IBAction func KayitOlButton(_ sender: Any) {
+        indicator.startAnimating()
         Auth.auth().createUser(withEmail: txtMailKayit.text!, password: txtPasswordKayit.text!) { (kullanici, error) in
             if(error == nil && kullanici != nil){
-                print("oldu")
                 Auth.auth().signIn(withEmail:self.txtMailKayit.text!, password: self.txtPasswordKayit.text!, completion: { (user, error) in
                     if(error == nil && kullanici != nil){
+                        self.kullaniciEkleme()
+                        self.indicator.stopAnimating()
                         let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                         appDelegate.window?.rootViewController = tabbar
                         //self.present(anasayfa,animated: true,completion: nil)//Normal Geçiş
                     }else{
+                        self.indicator.stopAnimating()
+                        self.alertOlustur(title: "Üye Giriş Hatası", mesaj: "Üye girişinde bir sıkıntı oluştu lütfen giriş kısmından tekrar deneyiniz.")
                         print("uye girişi hata")
                     }
                 })
                 
                 
             }else{
+                self.indicator.stopAnimating()
+                self.alertOlustur(title: "Üye Kayıt Hatası", mesaj: "Üye kayıt oluşturulurken bir sıkıntı oluştu lütfen tekrar deneyiniz.")
                 print("Hata")
             }
         }
     }
+    func kullaniciEkleme(){
+        let userUid = Auth.auth().currentUser!.uid
+        let kullanici = [ "uid":userUid,
+                          "mail":txtMailKayit.text! as String,
+                          "isim":txtIsimKayit.text! as String,
+                        ]
+        kullaniciRef.child(userUid).setValue(kullanici)
+    }
+    
     func textFotoKoyma(txtField: UITextField, img: UIImage){
         let solFotoGoruntu = UIImageView(frame: CGRect(x: 0.0, y: 0, width: 26, height: 26))
         solFotoGoruntu.image = img
@@ -60,6 +77,14 @@ class KayitController: UIViewController {
         txtField.layer.cornerRadius = 20
         txtField.layer.borderWidth = 1.0
         txtField.layer.borderColor = UIColor.darkGray.cgColor
+    }
+    
+    func alertOlustur(title:String,mesaj:String){
+        let alert = UIAlertController(title: title, message: mesaj, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert,animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
