@@ -356,14 +356,18 @@
                                 </connections>
                             </button>
                         </subviews>
-
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-
-
                         <viewLayoutGuide key="safeArea" id="sjg-Jx-WGn"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="İlan Ver" id="3w1-wu-Kzg"/>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="IlanVerPickerView" destination="xcI-p5-LM5" id="BDB-Ps-0HF"/>
+                        <outlet property="IlanVerUrunBaslik" destination="IYT-Ls-CcB" id="rgf-xU-QxD"/>
+                        <outlet property="IlanVerUrunFiyat" destination="JWt-ME-kTZ" id="0wh-F6-NLo"/>
+                        <outlet property="IlanVerUrunOzellik" destination="5mD-Fu-jRf" id="GFW-kj-gz7"/>
+                        <outlet property="ilanVerUrunImage" destination="5rR-VG-mad" id="E8t-MH-ZmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2f-p6-1xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

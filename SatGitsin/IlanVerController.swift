@@ -35,7 +35,6 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     }
    
     // ilan kategori seçme
-    @IBOutlet weak var IlanVerKategoriTxt: UILabel!
     @IBOutlet weak var IlanVerPickerView: UIPickerView!
     let foods = ["apples", "Banana", "Cora", "dfadgdsg", "fdasfs","fsdfgd", "fdgdh", "afdfdsgd"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,15 +48,15 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
     }
    
  // Ürün başlık seçme
-    @IBOutlet weak var IlanVerUrunBaslik: UITextField!
     
+    @IBOutlet weak var IlanVerUrunBaslik: UITextField!
     @IBOutlet weak var IlanVerUrunOzellik: UITextField!
     @IBOutlet weak var IlanVerUrunFiyat: UITextField!
     @IBAction func IlanverButon(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        textOval(txtField: IlanVerUrunBaslik)
+        self.textOval(txtField: IlanVerUrunBaslik)
         textOval(txtField: IlanVerUrunOzellik)
         textOval(txtField: IlanVerUrunFiyat)
         // Do any additional setup after loading the view.
