@@ -8,10 +8,57 @@
 
 import UIKit
 
-class IlanVerController: UIViewController {
-
+class IlanVerController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    // Resim seçme
+    @IBOutlet weak var ilanVerUrunImage: UIImageView!
+    @IBAction func FotografEkleme(_ sender: Any) {
+        let image=UIImagePickerController()
+        image.delegate=self
+        image.sourceType=UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing=false
+        self.present(image, animated: true)
+        {
+            
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image=info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            ilanVerUrunImage.isHidden = true
+            ilanVerUrunImage.image=image
+        }
+        else
+        {
+            //error mesage
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+   
+    // ilan kategori seçme
+    @IBOutlet weak var IlanVerKategoriTxt: UILabel!
+    @IBOutlet weak var IlanVerPickerView: UIPickerView!
+    let foods = ["apples", "Banana", "Cora", "dfadgdsg", "fdasfs","fsdfgd", "fdgdh", "afdfdsgd"]
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return foods[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return foods.count
+    }
+   
+ // Ürün başlık seçme
+    @IBOutlet weak var IlanVerUrunBaslik: UITextField!
+    
+    @IBOutlet weak var IlanVerUrunOzellik: UITextField!
+    @IBOutlet weak var IlanVerUrunFiyat: UITextField!
+    @IBAction func IlanverButon(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ilanVerUrunImage.isHidden = false
 
         // Do any additional setup after loading the view.
     }
@@ -22,14 +69,5 @@ class IlanVerController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
