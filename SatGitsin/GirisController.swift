@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class GirisController: UIViewController {
-
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var txtMailGiris: UITextField!
     @IBOutlet weak var txtPasswordGiris: UITextField!
     override func viewDidLoad() {
@@ -26,29 +27,30 @@ class GirisController: UIViewController {
     }
     
     @IBAction func GirisButton(_ sender: Any) {
-        
-        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = tabbar
-    
-        //	self.present(anasayfa2,animated: true,completion: nil)//Normal Geçiş
-        /*
+        indicator.startAnimating()
         Auth.auth().signIn(withEmail: txtMailGiris.text!, password:  txtPasswordGiris.text!) { (user, error) in
-            if(user != nil && error == nil){
-                let anasayfa2 = self.storyboard?.instantiateViewController(withIdentifier: "Anasayfa") as! Anasayfa
-                self.present(anasayfa2,animated: true,completion: nil)//Normal Geçiş
-                self.txtPasswordGiris.text = ""
-                self.txtMailGiris.text = ""
+                if(user != nil && error == nil){
+                self.indicator.stopAnimating()
+                let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = tabbar
                 //Animasyonlu geçiş
                 //self.navigationController?.pushViewController(anasayfa2, animated: true)
             }else {
-                print("Yanlışşş")
-            }*/
+                self.indicator.stopAnimating()
+                self.alertOlustur(title: "Giriş Hatası", mesaj: "Giriş yapılırken bir sıkıntı oluştu lütfen tekrar deneyiniz.")
+            }
         }
         
         
     }
-    
+    func alertOlustur(title:String,mesaj:String){
+        let alert = UIAlertController(title: title, message: mesaj, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert,animated: true, completion: nil)
+    }
     
     
     
@@ -71,5 +73,5 @@ class GirisController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+}
 

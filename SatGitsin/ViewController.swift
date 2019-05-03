@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var kayit: UIView!
     @IBOutlet weak var giris: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

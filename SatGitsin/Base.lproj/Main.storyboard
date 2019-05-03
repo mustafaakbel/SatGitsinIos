@@ -28,7 +28,7 @@
                                     <segment title="Kayit"/>
                                     <segment title="Giriş"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="KayitGirisSegmentKontrol:" destination="BYZ-38-t0r" eventType="valueChanged" id="8yN-4z-z6S"/>
                                 </connections>
@@ -118,7 +118,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m77-DR-SKE">
                                 <rect key="frame" x="16" y="197" width="343" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Dj8-He-DMm"/>
                                 </constraints>
@@ -128,9 +128,13 @@
                                 </state>
                                 <connections>
                                     <action selector="GirisButton:" destination="tjR-vG-LMB" eventType="touchUpInside" id="VUa-9l-wu8"/>
-                                    <segue destination="GKc-eo-ZPG" kind="show" id="hiK-Xk-VMF"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LP7-0i-eq8">
+                                <rect key="frame" x="177" y="209" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -147,6 +151,7 @@
                         <viewLayoutGuide key="safeArea" id="wEb-9t-N5D"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="LP7-0i-eq8" id="ten-H2-NPs"/>
                         <outlet property="txtMailGiris" destination="Cvo-m2-FzD" id="U7V-0O-lUJ"/>
                         <outlet property="txtPasswordGiris" destination="KeL-Hu-1wx" id="mK5-L5-jsb"/>
                     </connections>
@@ -160,16 +165,9 @@
             <objects>
                 <viewController id="gQf-KN-GHs" customClass="ProfilController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tyz-FT-20O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-wh-K7d">
-                                <rect key="frame" x="79" y="155" width="210" height="91"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-e6-ibv">
                                 <rect key="frame" x="150" y="290" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -178,11 +176,81 @@
                                     <action selector="CikisYap:" destination="gQf-KN-GHs" eventType="touchUpInside" id="zZR-XZ-IEy"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHU-Vb-Gbf">
+                                <rect key="frame" x="216" y="67" width="145" height="145"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="3Vh-y1-Nfn"/>
+                                    <constraint firstAttribute="width" constant="145" id="9MY-Rg-Cx7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-wh-K7d">
+                                <rect key="frame" x="18" y="92" width="197" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Fne-3A-ZQt"/>
+                                    <constraint firstAttribute="width" constant="197" id="hQ3-el-fPH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sG7-1b-q3c">
+                                <rect key="frame" x="311" y="20" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="U07-vX-cd0"/>
+                                    <constraint firstAttribute="height" constant="30" id="WIT-CE-6WN"/>
+                                </constraints>
+                                <state key="normal" title="Ayarlar"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uu-Z7-D03">
+                                <rect key="frame" x="18" y="168" width="179.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179.5" id="GYB-YK-3ec"/>
+                                    <constraint firstAttribute="height" constant="21" id="m0q-n2-eQJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aC-33-WKQ">
+                                <rect key="frame" x="330" y="58" width="31" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="1qi-Yx-6nF"/>
+                                    <constraint firstAttribute="width" constant="31" id="iFF-Iv-WHV"/>
+                                </constraints>
+                                <state key="normal" image="edit"/>
+                                <connections>
+                                    <action selector="AvatarDegistirme:" destination="gQf-KN-GHs" eventType="touchUpInside" id="guH-Nw-WpS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EbD-2L-Ygj" firstAttribute="trailing" secondItem="qHU-Vb-Gbf" secondAttribute="trailing" constant="14" id="17G-Pk-7Wt"/>
+                            <constraint firstItem="qHU-Vb-Gbf" firstAttribute="leading" secondItem="7uu-Z7-D03" secondAttribute="trailing" constant="18.5" id="1Jg-Xv-FhA"/>
+                            <constraint firstItem="EbD-2L-Ygj" firstAttribute="trailing" secondItem="4aC-33-WKQ" secondAttribute="trailing" constant="14" id="9sd-Sw-esL"/>
+                            <constraint firstItem="7uu-Z7-D03" firstAttribute="top" secondItem="5d3-wh-K7d" secondAttribute="bottom" constant="31" id="GsU-VX-1xX"/>
+                            <constraint firstItem="sG7-1b-q3c" firstAttribute="leading" secondItem="EbD-2L-Ygj" secondAttribute="leading" constant="311" id="KZ7-VG-LxF"/>
+                            <constraint firstItem="5d3-wh-K7d" firstAttribute="top" secondItem="EbD-2L-Ygj" secondAttribute="top" constant="72" id="YQJ-T0-KLO"/>
+                            <constraint firstItem="4aC-33-WKQ" firstAttribute="leading" secondItem="EbD-2L-Ygj" secondAttribute="leading" constant="330" id="YiZ-z1-tYB"/>
+                            <constraint firstItem="qHU-Vb-Gbf" firstAttribute="top" secondItem="sG7-1b-q3c" secondAttribute="bottom" constant="17" id="bGH-v9-u7t"/>
+                            <constraint firstItem="EbD-2L-Ygj" firstAttribute="trailing" secondItem="sG7-1b-q3c" secondAttribute="trailing" constant="16" id="bc9-Fw-9cK"/>
+                            <constraint firstItem="sG7-1b-q3c" firstAttribute="top" secondItem="EbD-2L-Ygj" secondAttribute="top" id="cKW-lv-Mgf"/>
+                            <constraint firstItem="7uu-Z7-D03" firstAttribute="leading" secondItem="EbD-2L-Ygj" secondAttribute="leading" constant="18" id="dWf-ip-dQM"/>
+                            <constraint firstItem="qHU-Vb-Gbf" firstAttribute="leading" secondItem="5d3-wh-K7d" secondAttribute="trailing" constant="1" id="hGk-wk-Jbn"/>
+                            <constraint firstItem="5d3-wh-K7d" firstAttribute="leading" secondItem="EbD-2L-Ygj" secondAttribute="leading" constant="18" id="kOT-mn-puB"/>
+                            <constraint firstItem="4aC-33-WKQ" firstAttribute="top" secondItem="sG7-1b-q3c" secondAttribute="bottom" constant="8" id="vdA-Yp-hFB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EbD-2L-Ygj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profil" id="mK0-j5-ofF"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="person_tab" id="mK0-j5-ofF"/>
+                    <connections>
+                        <outlet property="imageDegistirme" destination="4aC-33-WKQ" id="Bfd-iN-f9b"/>
+                        <outlet property="profilFotoImageView" destination="qHU-Vb-Gbf" id="eN9-dR-1lU"/>
+                        <outlet property="txtProfilIsim" destination="5d3-wh-K7d" id="oR7-5C-MDg"/>
+                        <outlet property="txtProfilMail" destination="7uu-Z7-D03" id="Hd5-0c-SpZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4E-SB-imO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,7 +261,7 @@
             <objects>
                 <viewController id="qOb-eP-AhV" customClass="MesajController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ha-kE-wR6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mesajlaşma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epX-BS-lP6">
@@ -204,7 +272,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.1043915102" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4Fj-Me-H4r"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mesaj" image="chat" id="rDy-6n-rKu"/>
@@ -218,7 +286,7 @@
             <objects>
                 <viewController storyboardIdentifier="Profil" id="j5w-xp-y79" customClass="IlanVerController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsU-Ur-fG2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adq-r5-6bP">
@@ -288,7 +356,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+
+
                         <viewLayoutGuide key="safeArea" id="sjg-Jx-WGn"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="İlan Ver" id="3w1-wu-Kzg"/>
@@ -310,7 +381,7 @@
             <objects>
                 <viewController id="a4N-Sj-4zL" customClass="AnasayfaController" customModule="SatGitsin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lxu-Vh-1cm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Anasayfa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-6F-lzl">
@@ -321,7 +392,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.2183558551" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wCt-bw-qci"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Anasayfa" image="home" id="GOD-aA-saW"/>
@@ -388,18 +459,23 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSV-wo-0uU">
                                 <rect key="frame" x="16" y="264" width="343" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Yx0-cb-R4b"/>
                                 </constraints>
                                 <state key="normal" title="Kayit Ol">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.1634348793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="KayitOlButton:" destination="nZ8-3t-WzY" eventType="touchUpInside" id="yE1-yg-Glm"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="atf-EU-GeO">
+                                <rect key="frame" x="177" y="240" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -419,6 +495,7 @@
                         <viewLayoutGuide key="safeArea" id="cvv-2k-S7Y"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="atf-EU-GeO" id="HbW-jF-bc5"/>
                         <outlet property="txtIsimKayit" destination="76Y-si-ImO" id="lG9-6i-Hgb"/>
                         <outlet property="txtMailKayit" destination="gU5-Kw-AQ3" id="za3-hT-KfX"/>
                         <outlet property="txtPasswordKayit" destination="hS7-NX-TJa" id="Nbg-1G-xRA"/>
@@ -431,7 +508,9 @@
     </scenes>
     <resources>
         <image name="chat" width="24" height="24"/>
+        <image name="edit" width="16" height="16"/>
         <image name="home" width="24" height="24"/>
+        <image name="person_tab" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.16343487933161782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
