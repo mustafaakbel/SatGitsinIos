@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Yeni hesap oluştur"
     }
 
     override func didReceiveMemoryWarning() {
