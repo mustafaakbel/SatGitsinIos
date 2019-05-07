@@ -11,6 +11,7 @@ import Firebase
 
 class GirisController: UIViewController {
     
+    @IBOutlet weak var GirisYapButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var txtMailGiris: UITextField!
     @IBOutlet weak var txtPasswordGiris: UITextField!
@@ -20,6 +21,9 @@ class GirisController: UIViewController {
         textFotoKoyma(txtField: txtMailGiris, img: mailFoto!)
         let passwordFoto = UIImage(named:"password")
         textFotoKoyma(txtField: txtPasswordGiris, img: passwordFoto!)
+        ovalYap(nesne: txtMailGiris)
+        ovalYap(nesne: txtPasswordGiris)
+        ovalYap(nesne: GirisYapButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,11 +61,16 @@ class GirisController: UIViewController {
     func textFotoKoyma(txtField: UITextField, img: UIImage){
         let solFotoGoruntu = UIImageView(frame: CGRect(x: 0.0, y: 0, width: 26, height: 26))
         solFotoGoruntu.image = img
-        txtField.leftView = solFotoGoruntu
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 25))
+        view.addSubview(solFotoGoruntu)
+        txtField.leftView = view
         txtField.leftViewMode = UITextFieldViewMode.always
-        txtField.layer.cornerRadius = 20
-        txtField.layer.borderWidth = 1.0
-        txtField.layer.borderColor = UIColor.darkGray.cgColor
+    }
+    
+    func ovalYap(nesne : AnyObject){
+        nesne.layer.cornerRadius = 20
+        nesne.layer.borderWidth = 1.0
+        nesne.layer.borderColor = UIColor.darkGray.cgColor
     }
 
     /*

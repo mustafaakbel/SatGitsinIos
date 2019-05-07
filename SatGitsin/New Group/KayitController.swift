@@ -11,11 +11,13 @@ import Firebase
 class KayitController: UIViewController {
     
     
+    @IBOutlet weak var KayitOlButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var txtMailKayit: UITextField!
     @IBOutlet weak var txtPasswordKayit: UITextField!
     @IBOutlet weak var txtIsimKayit: UITextField!
     var kullaniciRef : DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         kullaniciRef = Database.database().reference().child("Kullanicilar")
@@ -26,6 +28,11 @@ class KayitController: UIViewController {
         textFotoKoyma(txtField: txtPasswordKayit, img: passwordFoto!)
         let personFoto = UIImage(named:"person")
         textFotoKoyma(txtField: txtIsimKayit, img: personFoto!)
+        
+        ovalYap(nesne: txtMailKayit)
+        ovalYap(nesne: txtPasswordKayit)
+        ovalYap(nesne: txtIsimKayit)
+        ovalYap(nesne: KayitOlButton)
         // Do any additional setup after loading the view.
     }
 
@@ -65,19 +72,25 @@ class KayitController: UIViewController {
         let kullanici = [ "uid":userUid,
                           "mail":txtMailKayit.text! as String,
                           "isim":txtIsimKayit.text! as String,
+                          "profil_fotograf":"Yok" as String,
                         ]
         kullaniciRef.child(userUid).setValue(kullanici)
     }
     
     func textFotoKoyma(txtField: UITextField, img: UIImage){
-        let solFotoGoruntu = UIImageView(frame: CGRect(x: 0.0, y: 0, width: 26, height: 26))
+        let solFotoGoruntu = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 26))
         solFotoGoruntu.image = img
-        txtField.leftView = solFotoGoruntu
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 25))
+        view.addSubview(solFotoGoruntu)
+        txtField.leftView = view
         txtField.leftViewMode = UITextFieldViewMode.always
-        txtField.layer.cornerRadius = 20
-        txtField.layer.borderWidth = 1.0
-        txtField.layer.borderColor = UIColor.darkGray.cgColor
     }
+    func ovalYap(nesne : AnyObject){
+        nesne.layer.cornerRadius = 20
+        nesne.layer.borderWidth = 1.0
+        nesne.layer.borderColor = UIColor.darkGray.cgColor
+    }
+    
     
     func alertOlustur(title:String,mesaj:String){
         let alert = UIAlertController(title: title, message: mesaj, preferredStyle: UIAlertControllerStyle.alert)
