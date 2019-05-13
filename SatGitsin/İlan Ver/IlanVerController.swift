@@ -126,9 +126,11 @@ class IlanVerController: UIViewController, UINavigationControllerDelegate, UIIma
                 IlanlarRef.child(key!).setValue(ilan)
                 fotoYukleme(key: key!)
                 UrunCollectionView.isHidden = true
+                alertOlustur(title: "İlan Ver", mesaj: "İlanınız yayınlanmıştır.")
                 IlanVerUrunBaslik.text = ""
                 IlanVerUrunOzellik.text = ""
                 IlanVerUrunFiyat.text = ""
+                
             }
         }else{
             alertOlustur(title: "Resim Seç Hatası", mesaj: "Ürünün en az bir fotoğrafı yüklenmelidir..")

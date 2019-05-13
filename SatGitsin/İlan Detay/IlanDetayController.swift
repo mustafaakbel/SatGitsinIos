@@ -24,11 +24,13 @@ class IlanDetayController: UIViewController,UICollectionViewDelegate,UICollectio
     var ilanListe = [Ilan]()
     var imageUrl = [String]()
     var ilanIdSegue : String? = ""
+    let dbRef = Database.database().reference().child("Ilanlar")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
         ovalYap(nesne: ilanDetayButton)
         IlanGetir(yeniden: "İlk")
+        
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -36,16 +38,13 @@ class IlanDetayController: UIViewController,UICollectionViewDelegate,UICollectio
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
-        imageUrl.removeAll()
+        //imageUrl.removeAll()
         IlanGetir(yeniden: "Tekrar")
     }
     
-    func Kontrol(){
-        
-    }
+
     func IlanGetir(yeniden:String){
-        let dbRef = Database.database().reference().child("Ilanlar").child(ilanIdSegue!)
-        dbRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        dbRef.child(ilanIdSegue!).observeSingleEvent(of: .value, with: { (snapshot) in
             let ilanNesne = snapshot.value as? NSDictionary
             let  ilanId = ilanNesne?["ilanId"]
             let  ilanBaslik = ilanNesne?["baslik"]
@@ -73,7 +72,7 @@ class IlanDetayController: UIViewController,UICollectionViewDelegate,UICollectio
                     }
                 }
             }
-
+            self.Kontrol()
             
             print(ilanOzellik)
         }) { (error) in
@@ -97,23 +96,56 @@ class IlanDetayController: UIViewController,UICollectionViewDelegate,UICollectio
     }
     
     @IBAction func Duzenle(_ sender: Any) {
-        self.performSegue(withIdentifier: "ilanDetay", sender: nil)
+        self.performSegue(withIdentifier: "Duzenle", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as? IlanGuncelleController
-        let ilanBaslik2 = ilanListe[0].baslik!
-        let ilanFiyat2 = ilanListe[0].fiyat!
-        let ilanOzellik2 = ilanListe[0].ozellik!
-        let ilanId2 = ilanListe[0].ilanId!
-        destination?.SegueilanBaslik = ilanBaslik2
-        destination?.SegueilanFiyat = ilanFiyat2
-        destination?.SegueilanOzellik = ilanOzellik2
-        destination?.SegueilanId = ilanId2
-        //if let ilanIdSegue = IlanListe[selectedRow!].ilanId{
-          //  destination?.ilanIdSegue = ilanIdSegue
-        //}
+        if (segue.identifier == "Duzenle"){
+            let destination = segue.destination as? IlanGuncelleController
+            let ilanBaslik2 = ilanListe[0].baslik!
+            let ilanFiyat2 = ilanListe[0].fiyat!
+            let ilanOzellik2 = ilanListe[0].ozellik!
+            let ilanId2 = ilanListe[0].ilanId!
+            destination?.SegueilanBaslik = ilanBaslik2
+            destination?.SegueilanFiyat = ilanFiyat2
+            destination?.SegueilanOzellik = ilanOzellik2
+            destination?.SegueilanId = ilanId2
+        }else if (segue.identifier == "mesajGonderSegue"){
+            let destination = segue.destination as? MesajlasmaSayfasiController
+            let ilanVerenUid = ilanListe[0].uid!
+            destination?.uid = ilanVerenUid
+        }
+
     }
-    
+    func Kontrol(){
+        if (Auth.auth().currentUser?.uid != ilanListe[0].uid){
+            DuzenleButton.title = ""
+            DuzenleButton.isEnabled = false
+        }else{
+            ilanDetayButton.setTitle("Satıldı Mı ?", for: .normal)
+        }
+    }
+    @IBAction func ilanButtonAction(_ sender: Any) {
+        if(ilanDetayButton.title(for: .normal) == "Satıldı Mı ?"){
+            let refreshAlert = UIAlertController(title: "Satılma Durumu", message: "Satıldığına emin misin ? ", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { (action: UIAlertAction!) in
+                self.dbRef.child(self.ilanIdSegue!).child("satilma_durumu").setValue("1")
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Hayır", style: .default, handler: { (action: UIAlertAction!) in
+                
+                refreshAlert .dismiss(animated: true, completion: nil)
+                
+                
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            
+            
+        }else if (ilanDetayButton.title(for: .normal) == "Mesaj Gönder"){
+            self.performSegue(withIdentifier: "mesajGonderSegue", sender: nil)
+        }
+    }
     func ovalYap(nesne : AnyObject){
         nesne.layer.cornerRadius = 20
         nesne.layer.borderWidth = 1.0

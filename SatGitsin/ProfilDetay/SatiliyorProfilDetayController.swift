@@ -1,14 +1,14 @@
 //
-//  MesajController.swift
+//  SatiliyorProfilDetayController.swift
 //  SatGitsin
 //
-//  Created by Mustafa AKBEL on 1.05.2019.
+//  Created by Mustafa AKBEL on 11.05.2019.
 //  Copyright © 2019 Mustafa AKBEL. All rights reserved.
 //
 
 import UIKit
 
-class MesajController: UIViewController {
+class SatiliyorProfilDetayController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 class AnasayfaController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate {
-
-    
-    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     var dbRef = Database.database().reference().child("Ilanlar")
     var IlanListe = [Ilan]()
@@ -26,11 +23,11 @@ class AnasayfaController: UIViewController,UICollectionViewDelegate,UICollection
     var kategoriAd = ["ARABA", "EMLAK", "ELEKTRONİK", "EV VE BAHÇE", "SPOR, EĞLENCE VE OYUNLAR","GİYİM VE AKSESUAR", "BEBEK VE COCUK", "FİLM, KİTAP VE MÜZİK","DİĞER"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.tabBar.isHidden = false
         ilanlarGetir()
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
     

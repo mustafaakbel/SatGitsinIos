@@ -44,7 +44,14 @@ class IlanGuncelleController: UIViewController {
         dbRef.child("baslik").setValue(ilanBasligi.text!)
         dbRef.child("fiyat").setValue(ilanFiyati.text!)
         dbRef.child("ozellik").setValue(ilanOzellik.text!)
-        print("güncelledi")
+        alertOlustur(title: "İlan Güncelle", mesaj: "İlanınız Güncellenmiştir.")
+    }
+    func alertOlustur(title:String,mesaj:String){
+        let alert = UIAlertController(title: title, message: mesaj, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert,animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
