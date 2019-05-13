@@ -9,24 +9,24 @@
 import UIKit
 import Firebase
 import FirebaseStorage
-class ProfilController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ProfilController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
+    @IBOutlet weak var profilSegment: UISegmentedControl!
+    @IBOutlet weak var Satilanlar: UIView!
     @IBOutlet weak var txtProfilMail: UILabel!
+    @IBOutlet weak var Satiliyor: UIView!
     @IBOutlet weak var txtProfilIsim: UILabel!
     @IBOutlet weak var imageDegistirme: UIButton!
     @IBOutlet weak var profilFotoImageView: UIImageView!
     let kullanici = Auth.auth().currentUser
-    var kullaniciRef = Database.database().reference().child("Kullanicilar")
+    var dbRef = Database.database().reference()
     let storageRef = Storage.storage().reference().child("profil_foto")
     var downloadImageUrl:String?
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        kullaniciRef.keepSynced(true)
+    override func viewDidLoad() {        super.viewDidLoad()
+        dbRef.keepSynced(true)
         yuvarlakImage()
         yuvarlakButton()
         kullaniciAyarlari()
-        
         
         //self.kullaniciRef.child((self.kullanici?.uid)!).setValue(["isim": "asd"])
         // Do any additional setup after loading the view.
@@ -40,7 +40,7 @@ class ProfilController: UIViewController,UIImagePickerControllerDelegate,UINavig
 
         
         let uid = kullanici?.uid
-        kullaniciRef.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+        dbRef.child("Kullanicilar").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
             let ad = value?["isim"] as? String ?? ""
@@ -60,6 +60,20 @@ class ProfilController: UIViewController,UIImagePickerControllerDelegate,UINavig
             print(error.localizedDescription)
         }
         
+    }
+    @IBAction func profilSegmentKontrol(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            Satiliyor.alpha = 1
+            Satilanlar.alpha = 0
+            break
+        case 1:
+            Satiliyor.alpha = 0
+            Satilanlar.alpha = 1
+            break
+        default:
+            break
+        }
     }
     
     @IBAction func AvatarDegistirme(_ sender: Any) {
@@ -83,7 +97,7 @@ class ProfilController: UIViewController,UIImagePickerControllerDelegate,UINavig
                     return
                 }
                 let downloadURL = url?.absoluteString
-                self.kullaniciRef.child((self.kullanici?.uid)!).child("profil_fotograf").setValue(downloadURL)
+                self.dbRef.child("Kullanicilar").child((self.kullanici?.uid)!).child("profil_fotograf").setValue(downloadURL)
             })
         }
         uploadTask.observe(.progress) { (snapshot) in
